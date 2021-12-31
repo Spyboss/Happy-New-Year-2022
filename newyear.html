@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>NEW YEAR-2022</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+<link href='https://fonts.googleapis.com/css?family=Yeon+Sung
+
+' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Podkova
+
+' rel='stylesheet'>
+  <script src="https://raw.githack.com/atoms19/popAlert/main/popAlert.min.js">
+    </script>
+
+    </head>
+    
+    <body>
+<div align="center" id="loading">
+<h1>Loading...</h1>
+<br /><br />
+  <div id="loader"></div>
+<style>
+
+#loader{
+    display: block;
+    position: relative;
+    margin: -80px 0 0 -80px;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50vw;
+    height: 50vw;
+    border: 3px solid transparent;
+    /*first color*/
+    border-top-color: #DDA0DD;
+    /*------*/
+    -webkit-animation: spin 1s linear infinite; 
+}
+#loader:before{
+    content:"";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 90%;
+    border: 3px solid transparent;
+    /*second color*/
+    border-top-color:     #BA55D3;
+     /*------*/
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 2s linear infinite; 
+    }
+
+#loader:after{
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    top: 15px;
+    right: 15px;
+    left:15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    /*third color*/
+    border-top-color:     #FF1493;
+     /*------*/
+    -webkit-animation: spin 3s linear infinite; 
+    animation: spin 1.2s linear infinite; 
+
+    }
+
+@-webkit-keyframes spin {
+    0%   {
+    -webkit-transform: rotate(0deg); 
+    -ms-transform: rotate(0deg);  
+    transform: rotate(0deg);  
+    }
+    100% {
+    -webkit-transform: rotate(360deg);  
+    -ms-transform: rotate(360deg);  
+    transform: rotate(360deg);  
+
+    }
+} 
+
+</style>
+<style>
+				*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+body{
+  display:flex;
+  align-items:center;  
+  justify-content:center;
+  background-color:#F0FFF0;
+  height:100vh;
+}
+#next {
+    display: none;
+    margin: 20px;
+    text-decoration:none;
+    
+}
+
+ h2{
+    text-align:center;
+    padding:5px 0;
+    font-family:Podkova;
+}
+.status{
+    text-align:center;
+    padding:5px;
+    width:100%;
+    color:red;
+}
+.card{
+    width:320px;
+    background:url("https://static.vecteezy.com/system/resources/thumbnails/001/168/829/small/gray-and-white-halftone-design.jpg");
+    background-size:cover;
+    align-items:center;
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:4px 5px 20px black;
+}
+.img{
+    width:100%;
+    height:150px;   background:url("https://te.legra.ph/file/9f3732635716ec5bbc06a.jpg");
+    background-size:cover;
+    border-radius:18px;
+}
+ .box{
+    padding:10px;
+    width:80px;
+    margin:5px auto;
+    text-align:center;
+}
+.box2{
+    display: block;
+    width: 84px;
+    background-color:pink;
+    
+}
+h3 {
+    font-family:Yeon Sung
+
+;
+}
+h1 {
+    color:black;
+    font-family:Podkova;
+}
+
+						
+</style>
+
+        <audio controls style="display:none;" loop id="audio">
+     <source id="audio-source"
+     src="https://www.mboxdrive.com/Countdown%20Music.mp3"> </audio>
+ 
+  
+ <script>
+alert("\nNote:Tap anywhere to enable music"); 
+   
+window.addEventListener("mouseover",play);
+window.addEventListener("click",play);
+function play(){ document.getElementById("audio").play();
+}
+  
+ </script>
+             
+              
+        
+        <svg>
+            <rect id="pbBar" />
+            <text id="pbText"></text>
+        </svg>
+    </div>
+    <div id="next">
+    <div class="card">
+       
+            <div class="img"></div>
+            <div class="ii">
+                
+            </div>
+            <h2>Happy New Year-2022!!!</h2>
+            
+            <p class="status">❬❬00:00❭❭</p>
+            <br />
+            <center><h3>Dear All, <br />Wish u All a Very Happy New Year. Cheers to health, happiness, and prosperity in 2022!❣</h3></center>
+                <div class="box">   
+            <span id="like_0" class="heart-count">10</span>
+            <div onclick="IncCount('like_0');" class="box2">
+                <span class="heart">Like❤️</span>
+            </div>
+                   
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+ <script>
+        				function IncCount(id){
+    var iHeart = 0;
+    var heartCount = document.getElementById(id);
+    
+    if(heartCount != null){
+        iHeart = parseInt(heartCount.innerText) + 1;
+        heartCount.innerText = iHeart;
+    }
+}
+function progressBar(num) {
+   pbBar.setAttribute('width', num +'%');
+   pbText.innerHTML = num +'%';
+   pbText.setAttribute('x', num/2 +'%');
+}
+
+var count = 10;
+var tmr = setInterval(function() {
+    progressBar(count);
+    if(count===100) {
+        clearInterval(tmr);
+        loading.style.display = "none";
+        next.style.display = "block";
+    }
+    count++;             
+}, 50);
+alert ("Wishing u all a happy new year :D \nWait for page to load!")
+        				
+        </script>
+        
+    </body>
+</html>
